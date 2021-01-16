@@ -1,0 +1,75 @@
+{
+    "status":200,
+    "code":10000,
+    "responseMessage":"SUCCESS",
+    "message":"Students Data Fetched Successfully",
+    "content":[
+    {
+        "id": 1,
+        "fullName": "Patel Meet Pankajkumar",
+        "fName": "Patel",
+        "lName": "Meet",
+        "mName": "Pankajkumar",
+        "rollNumber": "33",
+        "gender": "M",
+        "class" : {
+            "id": 1,
+            "fullName": "11-C",
+            "div": "C",
+            "std": "11",
+            "stream": "Science"
+        }
+        
+    },{
+        "id": 2,
+        "fullName": "Patel Disha Ramanlal",
+        "fName": "Patel",
+        "lName": "Disha",
+        "mName": "Ramanlal",
+        "rollNumber": "40",
+        "gender": "F",
+        "class" : {
+            "id": 1,
+            "fullName": "11-C",
+            "div": "C",
+            "std": "11",
+            "stream": "Science"
+        }
+        
+    },{
+        "id": 2,
+        "fullName": "Parekh Umang Sureshbhai",
+        "fName": "Parekh",
+        "lName": "Umang",
+        "mName": "Sureshbhai",
+        "rollNumber": "25",
+        "gender": "M",
+        "class" : {
+            "id": 1,
+            "fullName": "10-B",
+            "div": "B",
+            "std": "10",
+            "stream": "-"
+        }
+        
+    },{
+        "id": 2,
+        "fullName": "Kadiya Sameer Mahendrabhai",
+        "fName": "Kadiya",
+        "lName": "Sameer",
+        "mName": "Mahendrabhai",
+        "rollNumber": "5",
+        "gender": "M",
+        "class" : {
+            "id": 1,
+            "fullName": "9-B",
+            "div": "B",
+            "std": "9",
+            "stream": "-"
+        }
+        
+    }
+
+    
+]
+}

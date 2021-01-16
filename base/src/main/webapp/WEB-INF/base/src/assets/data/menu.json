@@ -1,0 +1,23 @@
+{
+    "status":200,
+    "code":10000,
+    "responseMessage":"SUCCESS",
+    "message":"Menu Data Fetched Successfully",
+    "content" :[
+        {
+            "id": 1,
+            "displayName": "Class",
+            "menuKey": "CLASS_MENU"
+        },{
+            "id": 2,
+            "displayName": "Students",
+            "menuKey": "STUDENT_MENU"
+        }
+    ]
+
+}
+
+
+
+
+

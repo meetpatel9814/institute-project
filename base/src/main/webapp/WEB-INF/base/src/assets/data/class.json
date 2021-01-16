@@ -1,0 +1,92 @@
+{
+    "status":200,
+    "code":10000,
+    "responseMessage":"SUCCESS",
+    "message":"CLass Data Fetched Successfully",
+    "content":[
+    {
+        "id": 1,
+        "fullName": "9-A",
+        "div": "A",
+        "std": "9",
+        "stream": "-"
+    },
+    {
+        "id": 2,
+        "fullName": "9-B",
+        "div": "B",
+        "std": "9",
+        "stream": "-"
+    },
+    {
+        "id": 3,
+        "fullName": "10-A",
+        "div": "A",
+        "std": "10",
+        "stream": "-"
+    },
+    {
+        "id": 4,
+        "fullName": "11-A",
+        "div": "A",
+        "std": "11",
+        "stream": "Science"
+    },
+    {
+        "id": 1,
+        "fullName": "9-A",
+        "div": "A",
+        "std": "9",
+        "stream": "-"
+    },
+    {
+        "id": 2,
+        "fullName": "9-B",
+        "div": "B",
+        "std": "9",
+        "stream": "-"
+    },
+    {
+        "id": 3,
+        "fullName": "10-A",
+        "div": "A",
+        "std": "10",
+        "stream": "-"
+    },
+    {
+        "id": 4,
+        "fullName": "11-A",
+        "div": "A",
+        "std": "11",
+        "stream": "Science"
+    },
+    {
+        "id": 1,
+        "fullName": "9-A",
+        "div": "A",
+        "std": "9",
+        "stream": "-"
+    },
+    {
+        "id": 2,
+        "fullName": "9-B",
+        "div": "B",
+        "std": "9",
+        "stream": "-"
+    },
+    {
+        "id": 3,
+        "fullName": "10-A",
+        "div": "A",
+        "std": "10",
+        "stream": "-"
+    },
+    {
+        "id": 4,
+        "fullName": "11-A",
+        "div": "A",
+        "std": "11",
+        "stream": "Science"
+    }
+]
+}

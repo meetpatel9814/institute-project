@@ -1,0 +1,58 @@
+<div class="container">
+  <div *ngIf="!isAddClicked">
+    <div class="row">
+      <div class="col-12">
+        <button class="mr-3 float-right buttonLink" mat-raised-button color="primary"
+          (click)="isAddClicked= true">Add</button>
+      </div>
+    </div>
+    <div class="row" *ngIf="gridDetail.gridData">
+      <app-table [gridDetail]="gridDetail" class="col-12" (onSelectedRecordCallBack)="selectedRecordCallBack($event, $event)"></app-table>
+    </div>
+  </div>
+
+  <div class="mat-elevation-z8 p-3" *ngIf="isAddClicked">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row ">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Standard</mat-label>
+            <mat-select  formControlName="std" required>
+              <mat-option value="{{std}}" *ngFor="let std of stdList">{{std}}</mat-option>
+            </mat-select>
+            <mat-error>Please provide a Stream</mat-error>
+          </mat-form-field>
+
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Divistion</mat-label>
+            <mat-select formControlName="div" required>
+              <mat-option value="{{div}}" *ngFor="let div of divList">{{div}}</mat-option>
+            </mat-select>
+            <mat-error>Please provide a Stream</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Stream</mat-label>
+            <mat-select formControlName="stream" required>
+              <mat-option>-- None --</mat-option>
+              <mat-option value="{{stream}}" *ngFor="let stream of streamList">{{stream}}</mat-option>
+            </mat-select>
+            <mat-error>Please provide a Stream</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="row pt-3">
+        <div class="col">
+          <button class="mr-3 float-right buttonLink" mat-raised-button (click)="cancelForm()">Cancel</button>
+          <button class="mr-3 float-right buttonLink" mat-raised-button type="submit" color="primary" >Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
