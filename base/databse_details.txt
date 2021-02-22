@@ -1,0 +1,14 @@
+student_class_mapper >>
+    need to migrate this table every year
+    in this table year_range and is_current_year will indicate current/past record
+    class_details should be same for every year
+    but need to create new record for student_class_mapper for PASSED attendanceDetail from previous
+    year to current year
+    and if it required OLD record than pass with year_range
+    I.E. right now student1 is in 10-A class every details is filled for that but if user whats details for
+    student1 9-A of previous year than they ne pass year , attendanceDetail id and class to student_class_mapper table
+
+
+
+
+

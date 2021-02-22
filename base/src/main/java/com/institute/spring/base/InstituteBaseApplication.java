@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class InstituteBaseApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("tomcat.util.http.parser.HttpParser.requestTargetAllow", "{}");
 		SpringApplication.run(InstituteBaseApplication.class, args);
 	}
 

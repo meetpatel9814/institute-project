@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
 
-  private studentPath_ = '/assets/data/student.json';
+  private studentPath_ = '/assets/data/attendanceDetail.json';
 
   constructor(private http: HttpClient) { }
   getStudentDetails(): Observable<any> {

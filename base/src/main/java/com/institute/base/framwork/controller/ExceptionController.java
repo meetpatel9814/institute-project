@@ -5,6 +5,8 @@ import com.institute.base.framwork.enums.ResponseMessageType;
 import com.institute.base.framwork.enums.ResultCode;
 import com.institute.base.framwork.exception.BaseException;
 import com.institute.base.framwork.exception.BusinessException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @ControllerAdvice
 public class ExceptionController {
 
+  private static Logger logger = LogManager.getLogger();
 /*  @ExceptionHandler(value = NoHandlerFoundException.class)
   public Object handleStaticResourceNotFound(final NoHandlerFoundException ex, HttpServletRequest req, RedirectAttributes redirectAttributes) {
     if (req.getRequestURI().startsWith("/api"))
@@ -30,7 +33,7 @@ public class ExceptionController {
 
   @ExceptionHandler(value = BaseException.class)
   @ResponseStatus(HttpStatus.OK)
-  public @ResponseBody ResponseDto<String> handleBuisnessException(BaseException ex, HttpServletResponse response, WebRequest request) {
+  public @ResponseBody ResponseDto<String> handleBusinessException(BaseException ex, HttpServletResponse response, WebRequest request) {
     ResultCode resultCode = ex.getResultCode();
 
     ResponseDto<String> responseDto = new ResponseDto<>();
@@ -38,6 +41,7 @@ public class ExceptionController {
     responseDto.setMessage(resultCode.getMessage());
     responseDto.setCode(resultCode.getResultCode());
     responseDto.setResponseMessage(ResponseMessageType.ERROR);
+    response.setStatus(resultCode.getHttpStatus());
     return responseDto;
   }
 }

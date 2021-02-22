@@ -18,8 +18,8 @@ import { CommonInterceptor } from './framwork/CommonInterceptor';
 import { NgxSpinner } from 'ngx-spinner/lib/ngx-spinner.enum';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CommonDialogComponent } from './framwork/dialog/common-dialog/common-dialog.component';
-import { StudentComponent } from './student/student.component';
-import { StudentViewComponent } from './student/student-view/student-view.component';
+import { StudentComponent } from './attendanceDetail/attendanceDetail.component';
+import { StudentViewComponent } from './attendanceDetail/attendanceDetail-view/attendanceDetail-view.component';
 
 
 @NgModule({

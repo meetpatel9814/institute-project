@@ -4,12 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ClassService } from '../class/class.service';
 import { DIVISION_LIST, STD_LIST, STREAM_LIST } from '../util/CommonConstants';
 import { GridDetail } from '../util/GridDetails';
-import { StudentService } from './student.service';
+import { StudentService } from './attendanceDetail.service';
 
 @Component({
-  selector: 'app-student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.css']
+  selector: 'app-attendanceDetail',
+  templateUrl: './attendanceDetail.component.html',
+  styleUrls: ['./attendanceDetail.component.css']
 })
 export class StudentComponent implements OnInit {
 
@@ -17,14 +17,14 @@ export class StudentComponent implements OnInit {
   studentList: any;
   isAddClicked = false;
   classList = [];
-  
-  
+
+
   displayedDetails = [{ columnId: 'rollNumber', displayName: 'Roll Number',  isCallBackElement :true , callBackEventName: "viewStudent"},
   { columnId: 'fullName', displayName: 'Full Name' },
   { columnId: 'gender', displayName: 'Gender' },
   { columnId: 'className', displayName: 'Class', isNestedValue:true,  nestedColmunPath:"class.fullName"},
   { columnId: 'streamName', displayName: 'Stream', isNestedValue:true,  nestedColmunPath:"class.stream" }];
-  
+
   plainStudentDetailObj = {
     "fName": "",
     "lName": "",
@@ -36,10 +36,10 @@ export class StudentComponent implements OnInit {
 studentDetailObj = this.plainStudentDetailObj;
 
   gridDetail = new GridDetail();
-  
-  constructor(private fb: FormBuilder, private studentService: StudentService, private router: Router, private activatedRoute: ActivatedRoute,
+
+  constructor(private fb: FormBuilder, private attendanceService: StudentService, private router: Router, private activatedRoute: ActivatedRoute,
     private classService: ClassService) { }
-  
+
 
   ngOnInit(): void {
     this.getClassList();
@@ -54,7 +54,7 @@ studentDetailObj = this.plainStudentDetailObj;
   }
 
   ngAfterViewInit(): void {
-    
+
   }
 
   applyFilter(event) {
@@ -79,10 +79,10 @@ studentDetailObj = this.plainStudentDetailObj;
         break
     }
 
-    
+
   }
   viewStudentDetail(selectedRecord: any) {
-    this.router.navigate(['../student/'+selectedRecord.class.fullName+'/'+selectedRecord.rollNumber], {relativeTo : this.activatedRoute});
+    this.router.navigate(['../attendanceDetail/'+selectedRecord.class.fullName+'/'+selectedRecord.rollNumber], {relativeTo : this.activatedRoute});
   }
 
   editDetail(selectedRecord) {
@@ -96,7 +96,7 @@ studentDetailObj = this.plainStudentDetailObj;
     "rollNumber": selectedRecord.rollNumber,
     "gender": selectedRecord.gender,
     "classId" : selectedRecord.class.id
-    
+
     });
   }
 
@@ -110,10 +110,10 @@ studentDetailObj = this.plainStudentDetailObj;
   }
 
   /**
-   * to Retrive menu list 
+   * to Retrive menu list
    */
   private getStudentDetails(classFullName: string) {
-    this.studentService.getStudentDetails().subscribe(data => {
+    this.attendanceService.getStudentDetails().subscribe(data => {
       this.studentList = data.content;
       this.gridDetail.gridData = data.content;
       this.gridDetail.displayColumnDetails = this.displayedDetails;
